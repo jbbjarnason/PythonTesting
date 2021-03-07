@@ -35,6 +35,7 @@ class Scanner:
 			barcode_match = re.search(self._regex, data)
 			if barcode_match is None:
 				print("Could not find barcode in data", data)
+				print("Configured regular expression is", self._regex)
 				return
 			barcode_result = barcode_match.group(1)  # Todo is this the best way of parsing, given that the pattern is an argument
 			if barcode_result is None:
